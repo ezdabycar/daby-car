@@ -1,0 +1,363 @@
+getgenv().synSpy = {
+    spyPrint              = warn;
+    disableMessageOut     = true;
+    disableErrorDetection = true;
+    disableLocalKick      = true;
+    helpMessage           = false;
+    hiddenRemotes         = {
+    }
+}
+xpcall(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/xQTn6M1m"))()
+end, rconsolewarn)
+wait(0)
+local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/fluxlib.txt")()
+
+local win = Flux:Window("gay invicta", "Strasbourg", Color3.fromRGB(255, 110, 48), Enum.KeyCode.LeftControl)
+local tab = win:Tab("daby car", "http://www.roblox.com/asset/?id=6023426915")
+tab:Line()
+tab:Button("kill all", "the retard mods will kick/ban you in like 5 seconds of using it", function()
+Flux:Notification("are you sure you want to kill all this will 99% of the time get you banned/kicked you have 10 seconds to leave", "kill all idc ez")
+wait(10)
+local player = game:service'Players'.LocalPlayer
+function stab(target, distance)
+    local musket = player.Character:FindFirstChild("Musket") or player.Backpack:FindFirstChild("Musket")
+    musket.Server.BayonetRemote:FireServer(0, target)
+end
+function stabToDeath(target)
+    player.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame-- * CFrame.new(0, -5, 0)
+    wait(.25)
+    stab(target)
+    wait(.25)
+    player.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame-- * CFrame.new(0, -5, 0)
+    wait(.25)
+    stab(target)
+    wait(.25)
+end
+while true do
+    for _, target in next, game:service'Players':GetPlayers() do
+        if player.Team ~= target.Team and target.Character then
+            xpcall(function()
+                stabToDeath(target)
+            end, warn)
+        end
+    end
+    wait()
+end
+end)
+
+tab:Label("did you know dababy weighs 165 pounds?")
+
+tab:Line()
+
+tab:Button("kill nearest idiot", "no spam", function()
+Flux:Notification("dont spam itll kick u", "ok")
+wait(1)
+local player = game:service'Players'.LocalPlayer
+local lastFired = 0
+local cooldown = 1
+
+table.foreach(getconnections(game:service'ScriptContext'.Error), function(i,v)
+    v:Disable()
+end)
+
+function canSeePlayer(target)
+    local playerPos = player.Character.HumanoidRootPart.Position
+    local targetPos = target.Character.HumanoidRootPart.Position
+    local ray = Ray.new(playerPos, (targetPos - playerPos).Unit * 5000)
+    local hit = workspace:FindPartOnRayWithIgnoreList(ray, {player.Character})
+    return hit and hit.Parent and hit.Parent:FindFirstChildOfClass("Humanoid")
+end
+
+function fire(target)
+    if (os.time() - cooldown) < lastFired then return end
+    lastFired = os.time()
+    game:service'ReplicatedStorage'.Frontier.Bullet:FireServer({
+        Target = target.Character.PrimaryPart.Position;
+        Origin = player.Character.PrimaryPart.Position;
+    })
+    wait()
+    player.Damage:FireServer(target, 'Head', 5)
+end
+
+local visiblePlayers = {}
+    for i, target in next, game:service'Players':GetPlayers() do
+        if player.Team ~= target.Team then
+            local rootPart = target.Character and target.Character.PrimaryPart
+            if rootPart and canSeePlayer(target) then
+                table.insert(visiblePlayers, target)
+            end
+        end
+    end
+    local target
+    for i, t in next, visiblePlayers do
+        if not target or (t.Character.PrimaryPart.Position - player.Character.PrimaryPart.Position).Magnitude < (target.Character.PrimaryPart.Position - player.Character.PrimaryPart.Position).Magnitude then
+            target = t
+        end
+    end
+    if target then
+        fire(target)
+    end
+        for i = 1,5 do
+            game:service'RunService'.RenderStepped:Wait()
+        end
+end)
+
+tab:Label("did you know dababy is shorter than jojo siwa?")
+
+tab:Line()
+
+tab:Button("dababy sky box EXTREMELY HOT GONE SEXUAL COPS CALLED", "ez", function()
+    Flux:Notification("dababy slowly takes over the world", "bet")
+    wait(2.5)
+    h = Instance.new("Sky")
+    h.Parent=game.Lighting
+    h.SkyboxBk="http://www.roblox.com/asset/?id=6075395846"
+    h.SkyboxDn="http://www.roblox.com/asset/?id=6075395846"
+    h.SkyboxFt="http://www.roblox.com/asset/?id=6075395846"
+    h.SkyboxLf="http://www.roblox.com/asset/?id=6075395846"
+    h.SkyboxRt="http://www.roblox.com/asset/?id=6075395846"
+    h.SkyboxUp="http://www.roblox.com/asset/?id=6075395846"
+end)
+
+tab:Label("did you know dababy was born on december 22nd 1991?")
+
+tab:Line()
+
+tab:Button("sus sus amogus music", "ez", function()
+    Flux:Notification("sususususususususuusus", "amogus")
+    wait(2.5)
+    local s = Instance.new("Sound")
+    s.Name = "Sound"
+    s.SoundId = "http://www.roblox.com/asset/?id=6065418936"
+    s.Volume = 10
+    s.Pitch = 1
+    s.Looped = true
+    s.archivable = false
+    s.Parent = game.Workspace
+    wait(0)
+    s:play()
+end)
+
+tab:Label("did you know dababys real name is Jonathan Lyndale Kirk?")
+
+tab:Line()
+
+tab:Button("kill nearest dababys morale", "ez", function()
+    local player = game:service'Players'.LocalPlayer
+local lastFired = 0
+local cooldown = 1
+
+table.foreach(getconnections(game:service'ScriptContext'.Error), function(i,v)
+    v:Disable()
+end)
+
+function canSeePlayer(target)
+    local playerPos = player.Character.HumanoidRootPart.Position
+    local targetPos = target.Character.HumanoidRootPart.Position
+    local ray = Ray.new(playerPos, (targetPos - playerPos).Unit * 5000)
+    local hit = workspace:FindPartOnRayWithIgnoreList(ray, {player.Character})
+    return hit and hit.Parent and hit.Parent:FindFirstChildOfClass("Humanoid")
+end
+
+function fire(target)
+    if (os.time() - cooldown) < lastFired then return end
+    lastFired = os.time()
+    game:service'ReplicatedStorage'.Frontier.Bullet:FireServer({
+        Target = target.Character.PrimaryPart.Position;
+        Origin = player.Character.PrimaryPart.Position;
+    })
+    wait()
+end
+local visiblePlayers = {}
+    for i, target in next, game:service'Players':GetPlayers() do
+        if player.Team ~= target.Team then
+            local rootPart = target.Character and target.Character.PrimaryPart
+            if rootPart and canSeePlayer(target) then
+                table.insert(visiblePlayers, target)
+            end
+        end
+    end
+    local target
+    for i, t in next, visiblePlayers do
+        if not target or (t.Character.PrimaryPart.Position - player.Character.PrimaryPart.Position).Magnitude < (target.Character.PrimaryPart.Position - player.Character.PrimaryPart.Position).Magnitude then
+            target = t
+        end
+    end
+    if target then
+        fire(target)
+    end
+        for i = 1,5 do
+            game:service'RunService'.RenderStepped:Wait()
+    end
+end)
+tab:Label("did you know dababy was born in Charlotte, North Carolina?")
+
+tab:Line()
+
+tab:Button("crash dababy game :(", "dont spam you idiot", function()
+    local LP = game:GetService('Players').LocalPlayer
+local LC = LP.Character
+local LB = LP.Backpack
+local Hum = LC:FindFirstChildOfClass('Humanoid')
+local Tool = nil
+
+if not Hum then
+    return
+end
+
+Hum:UnequipTools()
+
+for _, v in next, LB:GetChildren() do
+    if v:IsA('Tool') and v:FindFirstChild('Handle') then
+        Tool = v
+        break
+    end
+end
+
+if not Tool then
+    return
+end
+
+Tool.Parent = LB
+Tool.Grip = CFrame.new(0/0, 0/0, 0/0)
+for i = 1, 10000 do
+    Tool.Parent = LC
+    Tool.Parent = LB
+end
+end)
+
+tab:Label("did you know dababy has two children and is also know as baby jesus??")
+tab:Line()
+
+local tab1 = win:Tab("sus", "http://www.roblox.com/asset/?id=6023426915")
+tab1:Line()
+tab1:Button("dababy esp", "es", function()
+    local plrs = game:service'Players';
+    local function epic_esp(model)
+    local human = model:WaitForChild('Humanoid',5);
+    if human then
+    human.HealthDisplayDistance = math.huge;
+    human.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOn;
+    human.NameDisplayDistance = math.huge;
+    human.NameOcclusion = Enum.NameOcclusion.NoOcclusion;
+    end;
+    end;
+
+    for _,p in next,plrs:GetPlayers() do
+    if p.Character~=nil then epic_esp(p.Character) end;
+    p.CharacterAdded:Connect(function(c) epic_esp(c) end);
+    end;
+
+    plrs.PlayerAdded:Connect(function(p)
+    p.CharacterAdded:Connect(function(c) epic_esp(c) end) ;
+    end);
+end)
+
+tab1:Line()
+
+tab1:Button("rejoin", "ezzdsdass", function()
+    local ts = game:GetService("TeleportService")
+    local p = game:GetService("Players").LocalPlayer
+    ts:Teleport(game.PlaceId, p)
+end)
+
+local tab2 = win:Tab("dababy fun facts", "http://www.roblox.com/asset/?id=6023426915")
+tab2:Line()
+tab2:Label("He was born on December 22, 1991")
+tab2:Label("He is 5 feet 8 inches tall")
+tab2:Label("He has 2 kids")
+tab2:Label("DaBaby's real name is Jonathatn Lyndale Kirk")
+tab2:Label("His first career name was Baby Jesus but he changed it as he thought it had become a distraction")
+tab2:Label("He wore a diaper at South By Southwest and gained national attention in 2017")
+tab2:Label("He was involved in a shooting at Walmart in 2018")
+tab2:Label("He says he's not affiliated with any gangs")
+tab2:Label("His Dream features include Eminem, Kendrick Lamar, Lil Wayne and more")
+tab2:Label("He made Forbes '30 Under 30' List")
+tab2:Label("DaBaby is the youngest of the three children of his parents")
+tab2:Label("DaBaby attended the University of North Carolina at Greensboro for two years, but didn't finish his studies")
+tab2:Label("papa avery is very tired its fucking 5 am HELP")
+
+local tab3 = win:Tab("hot dababies near u", "http://www.roblox.com/asset/?id=6023426915")
+tab3:Line()
+
+tab3:Textbox("walkspeed", "zoom zoom sus amogus", true, function(t)
+local LocalPlayer, mt, index, newindex = game.Players.LocalPlayer, getrawmetatable(game)
+index = mt.__index
+newindex = mt.__newindex
+local Values = {
+    WalkSpeed = 16
+}
+setreadonly(mt, false)
+mt.__index = newcclosure(function(t,k)
+    return (not checkcaller() and Values[k] or index(t,k))
+end)
+mt.__newindex = newcclosure(function(t,k,v)
+    if not checkcaller() and Values[k] then return end
+    newindex(t,k,v)
+end)
+setreadonly(mt, true)
+local Humanoid = LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+Humanoid.WalkSpeed = t
+end)
+tab3:Textbox("jump power", "zoom zoom sus amogus", true, function(t)
+local LocalPlayer, mt, index, newindex = game.Players.LocalPlayer, getrawmetatable(game)
+index = mt.__index
+newindex = mt.__newindex
+local Values = {
+    JumpPower = 50
+}
+setreadonly(mt, false)
+mt.__index = newcclosure(function(t,k)
+    return (not checkcaller() and Values[k] or index(t,k))
+end)
+mt.__newindex = newcclosure(function(t,k,v)
+    if not checkcaller() and Values[k] then return end
+    newindex(t,k,v)
+end)
+setreadonly(mt, true)
+local Humanoid = LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+Humanoid.JumpPower = t
+end)
+tab3:Textbox("hip height", "toll", true, function(t)
+local LocalPlayer, mt, index, newindex = game.Players.LocalPlayer, getrawmetatable(game)
+index = mt.__index
+newindex = mt.__newindex
+local Values = {
+    HipHeight = 50
+}
+setreadonly(mt, false)
+mt.__index = newcclosure(function(t,k)
+    return (not checkcaller() and Values[k] or index(t,k))
+end)
+mt.__newindex = newcclosure(function(t,k,v)
+    if not checkcaller() and Values[k] then return end
+    newindex(t,k,v)
+end)
+setreadonly(mt, true)
+local Humanoid = LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+Humanoid.HipHeight = t
+end)
+tab3:Button("infinite jump", "penos", function()
+    local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+
+_G.JumpHeight = 50;
+
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
+tab3:Button("fly", "e to togle", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/4EPqpm2N'),true))()
+end)
